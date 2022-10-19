@@ -14,19 +14,19 @@ const DoneList = () => {
     removeTodo(item);
   };
 
-  return(
+  return (
     <div>
       <h1 className="done-header">Done</h1>
       <ul className="done-list">
-        {doneList.map((item:any)=>(
+        {doneList.map((item: any) => (
           <li key={item.id}>
             {item.content}
-            <button onClick={()=>handleRemoveAction(item)}>Remove</button>
+            <button onClick={() => handleRemoveAction(item)}>Remove</button>
           </li>
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
 export default DoneList;

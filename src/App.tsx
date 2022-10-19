@@ -1,10 +1,10 @@
-import React from 'react';
-import { RecoilRoot } from 'recoil';
-import DoneList from './component/DoneList/DoneList';
-import InprogressList from './component/InprogressList/InprogressList';
-import logo from './logo.svg';
-import NewList from './component/NewList/NewList';
-import InputNewList from './component/InputNewList';
+import React from "react";
+import { RecoilRoot } from "recoil";
+import DoneList from "./component/DoneList/DoneList";
+import InprogressList from "./component/InprogressList/InprogressList";
+import logo from "./logo.svg";
+import NewList from "./component/NewList/NewList";
+import InputNewList from "./component/InputNewList";
 import "./App.scss";
 
 function App() {
@@ -14,11 +14,11 @@ function App() {
         <header>
           <h1>To-do List</h1>
         </header>
-        <InputNewList/>
+        <InputNewList />
         <div className="content">
-          <NewList/>
-          <InprogressList/>
-          <DoneList/>
+          <NewList />
+          <InprogressList />
+          <DoneList />
         </div>
       </div>
     </RecoilRoot>

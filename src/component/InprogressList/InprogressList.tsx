@@ -1,7 +1,7 @@
 import React from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { inprogressListState, doneListState } from "../../recoil/listState";
-import "./InprogressList.scss"
+import "./InprogressList.scss";
 
 const InprogressList = () => {
   const inprogressList = useRecoilValue(inprogressListState);
@@ -14,19 +14,21 @@ const InprogressList = () => {
     changeDoneTodo(item);
   };
 
-  return(
+  return (
     <div>
       <h1 className="inprogress-header">Inprogress</h1>
       <ul className="inprogress-list">
-        {inprogressList.map((item:any)=>(
+        {inprogressList.map((item: any) => (
           <li key={item.id}>
             {item.content}
-            <button onClick={()=>handleChangeDoneAction(item.id)}>Done</button>
+            <button onClick={() => handleChangeDoneAction(item.id)}>
+              Done
+            </button>
           </li>
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
 export default InprogressList;

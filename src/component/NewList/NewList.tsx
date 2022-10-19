@@ -21,7 +21,9 @@ const NewList = () => {
         {newList.map((item: any) => (
           <li key={item.id}>
             {item.content}
-            <button onClick={()=>handleChangeInprogressAction(item.id)}>In-progress</button>
+            <button onClick={() => handleChangeInprogressAction(item.id)}>
+              In-progress
+            </button>
           </li>
         ))}
       </ul>

@@ -1,50 +1,53 @@
-$colorHeader: #4488CC;
-$colorContent:  #66BBFF;
+$colorHeader: #4488cc;
+$colorContent: #66bbff;
 $colorHighlight: #112233;
-$colorLowlight: #AACCFF;
+$colorLowlight: #aaccff;
 $colorBackgroundContent: #224466;
 
-@mixin sizeFont($option){
-  $size: map-get((
-    extra-large: 30px,
-    large: 25px,
-    medium: 20px,
-    small:15px
-  ), $option);
+@mixin sizeFont($option) {
+  $size: map-get(
+    (
+      extra-large: 30px,
+      large: 25px,
+      medium: 20px,
+      small: 15px,
+    ),
+    $option
+  );
   font-size: $size;
 }
 
-.centerAlign{
+.centerAlign {
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.leftAlign{
+.leftAlign {
   justify-content: left;
   align-items: center;
   text-align: left;
 }
 
-.rightAlign{
+.rightAlign {
   justify-content: right;
   align-items: center;
   text-align: right;
 }
 
-.App{
+.App {
   width: 100vw;
   height: 100vh;
 
-  header{
+  header {
     color: $colorHeader;
     @extend .centerAlign;
     @include sizeFont(extra-large);
   }
-  .content{
+  .content {
     display: flex;
     @for $i from 1 through 3 {
-      div:nth-child(#{$i}){
+      div:nth-child(#{$i}) {
         flex-grow: 1;
         flex-basis: 33%;
         @extend .centerAlign;
@@ -55,29 +58,29 @@ $colorBackgroundContent: #224466;
   }
 }
 
-.content-header{
+.content-header {
   color: $colorHeader;
   @include sizeFont(extra-large);
 }
-.content-list{
+.content-list {
   display: flex;
   flex-direction: column;
-  li{
+  li {
     @extend .leftAlign;
     color: $colorContent;
     margin: 10px 20px;
     padding: 5px 15px;
-    button{
+    button {
       margin: 10px 15px;
       border: 0;
       border-radius: 5px;
       cursor: pointer;
-      &:hover{
+      &:hover {
         transform: scale(1.2);
-        background-color: #AAAA00;
+        background-color: #aaaa00;
       }
     }
-    &:hover{
+    &:hover {
       background-color: $colorLowlight;
       color: $colorHighlight;
     }

@@ -1,15 +1,15 @@
 @import "../../App.scss";
 
-.done-header{
-  @extend .content-header
+.done-header {
+  @extend .content-header;
 }
 
-.done-list{
+.done-list {
   @extend .content-list;
-  li{
-    button{
-      &:hover{
-        background-color: #BB3355;
+  li {
+    button {
+      &:hover {
+        background-color: #bb3355;
       }
     }
   }

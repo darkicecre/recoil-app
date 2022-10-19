@@ -1,15 +1,15 @@
 @import "../../App.scss";
 
-.inprogress-header{
+.inprogress-header {
   @extend .content-header;
 }
 
-.inprogress-list{
+.inprogress-list {
   @extend .content-list;
-  li{
-    button{
-      &:hover{
-        background-color: #33BB55;
+  li {
+    button {
+      &:hover {
+        background-color: #33bb55;
       }
     }
   }

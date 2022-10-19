@@ -1,29 +1,34 @@
-import React, { useState } from 'react';
-import { useSetRecoilState } from 'recoil';
-import { newListState } from '../recoil/listState';
+import React, { useState } from "react";
+import { useSetRecoilState } from "recoil";
+import { newListState } from "../recoil/listState";
 
-const InputNewList = () =>{
+const InputNewList = () => {
   const addNewTodo = useSetRecoilState(newListState);
-  const [text,setText] = useState<string>('');
+  const [text, setText] = useState<string>("");
 
   const handleAddNewAction = () => {
-    if(!text){
+    if (!text) {
       return;
     }
     addNewTodo(text);
-    setText('')
-  }
+    setText("");
+  };
 
-  const handleChangeText = (e:any) => {
+  const handleChangeText = (e: any) => {
     setText(e.target.value);
-  }
+  };
 
-  return(
+  return (
     <div>
-      <input type="text" placeholder='Enter new to-do' value={text} onChange={handleChangeText} />
+      <input
+        type="text"
+        placeholder="Enter new to-do"
+        value={text}
+        onChange={handleChangeText}
+      />
       <button onClick={handleAddNewAction}>Add</button>
     </div>
-  )
-}
+  );
+};
 
 export default InputNewList;
