@@ -1,0 +1,9 @@
+@import "../../App.scss";
+
+.new-header{
+  @extend .content-header;
+}
+
+.new-list{
+  @extend .content-list;
+}

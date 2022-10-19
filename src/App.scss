@@ -1,0 +1,85 @@
+$colorHeader: #4488CC;
+$colorContent:  #66BBFF;
+$colorHighlight: #112233;
+$colorLowlight: #AACCFF;
+$colorBackgroundContent: #224466;
+
+@mixin sizeFont($option){
+  $size: map-get((
+    extra-large: 30px,
+    large: 25px,
+    medium: 20px,
+    small:15px
+  ), $option);
+  font-size: $size;
+}
+
+.centerAlign{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.leftAlign{
+  justify-content: left;
+  align-items: center;
+  text-align: left;
+}
+
+.rightAlign{
+  justify-content: right;
+  align-items: center;
+  text-align: right;
+}
+
+.App{
+  width: 100vw;
+  height: 100vh;
+
+  header{
+    color: $colorHeader;
+    @extend .centerAlign;
+    @include sizeFont(extra-large);
+  }
+  .content{
+    display: flex;
+    @for $i from 1 through 3 {
+      div:nth-child(#{$i}){
+        flex-grow: 1;
+        flex-basis: 33%;
+        @extend .centerAlign;
+        border: 2px black solid;
+        background-color: $colorBackgroundContent;
+      }
+    }
+  }
+}
+
+.content-header{
+  color: $colorHeader;
+  @include sizeFont(extra-large);
+}
+.content-list{
+  display: flex;
+  flex-direction: column;
+  li{
+    @extend .leftAlign;
+    color: $colorContent;
+    margin: 10px 20px;
+    padding: 5px 15px;
+    button{
+      margin: 10px 15px;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover{
+        transform: scale(1.2);
+        background-color: #AAAA00;
+      }
+    }
+    &:hover{
+      background-color: $colorLowlight;
+      color: $colorHighlight;
+    }
+  }
+}
